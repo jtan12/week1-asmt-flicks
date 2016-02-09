@@ -47,7 +47,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="overviewLabel" destination="5H8-bB-HiJ" id="ebp-be-56m"/>
-                                            <outlet property="posterView" destination="Ajh-ql-gXQ" id="veg-P3-Zi5"/>
+                                            <outlet property="posterImageView" destination="Ajh-ql-gXQ" id="paR-bQ-B6v"/>
                                             <outlet property="titleLabel" destination="um7-MB-YaV" id="wmT-zF-sHl"/>
                                             <segue destination="P4T-bc-yU7" kind="push" id="4Ci-OH-2Vz"/>
                                         </connections>
@@ -74,38 +74,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="SHU-5r-Lum">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <view alpha="0.80000000000000004" contentMode="scaleToFill" id="wuM-y7-nWG">
-                                <rect key="frame" x="0.0" y="341" width="320" height="227"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="tdC-JO-qmG">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1lT-gq-in4">
-                                        <rect key="frame" x="8" y="8" width="304" height="24"/>
+                                    <view alpha="0.80000000000000004" contentMode="scaleToFill" id="wuM-y7-nWG">
+                                        <rect key="frame" x="0.0" y="568" width="320" height="261"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cb7-C2-Ubo">
-                                        <rect key="frame" x="8" y="40" width="304" height="146"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cb7-C2-Ubo">
+                                                <rect key="frame" x="8" y="40" width="304" height="32"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1lT-gq-in4">
+                                                <rect key="frame" x="8" y="8" width="304" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="SHU-5r-Lum">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="XN6-5J-Gyp"/>
                     <connections>
+                        <outlet property="infoView" destination="wuM-y7-nWG" id="CVF-B1-tRU"/>
                         <outlet property="overviewLabel" destination="cb7-C2-Ubo" id="24c-MT-qt5"/>
                         <outlet property="posterImageView" destination="SHU-5r-Lum" id="puu-X1-ghQ"/>
+                        <outlet property="scrollView" destination="tdC-JO-qmG" id="gSE-JU-X8Z"/>
                         <outlet property="titleLabel" destination="1lT-gq-in4" id="oft-3A-yet"/>
                     </connections>
                 </viewController>
@@ -116,7 +124,7 @@
         <!--Navigation Controller-->
         <scene sceneID="COP-zz-6sh">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4lq-cR-mwg" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MoviesNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="4lq-cR-mwg" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gMM-eC-rau">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
